@@ -1,5 +1,4 @@
-
-// display changing questions by buttons
+// display changing by buttons
 function toquestion1() {
     document.getElementById("question2").style.display = "none"; 
     document.getElementById("question1").style.display = "block"; 
@@ -19,7 +18,7 @@ function toquestion4() {
     document.getElementById("question4").style.display = "block"; 
 }
   
-// display final score and answers 
+// display final score and answers
 function tosubmit() {
     document.getElementById("question4").style.display = "none"; 
     document.getElementsByTagName("h1")[0].innerHTML = "Interactive Quiz Answers!"; 
@@ -32,11 +31,13 @@ function tosubmit() {
         }
     }
     var outcomes = document.getElementsByTagName("p");
-    var scores = 0; 
+    var wrong_score = 0; 
     for (let i = 0; i < outcomes.length; i++) {
         if (selected_inputs[i].value != "Correct") {
             outcomes[i].innerHTML += "You incorrectly answered " + selected_inputs[i].value + "."; 
-            scores++; 
+            wrong_score++; 
         }
     }
-}
+    var display_score = document.getElementsByTagName("h4");
+    display_score[0].innerHTML += (4-wrong_score) + "/4"; 
+  }
