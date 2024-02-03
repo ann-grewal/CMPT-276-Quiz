@@ -1,46 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My webpage</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Interactive Quiz </title>
+  <link href="quizApp.css" rel="stylesheet" type="text/css">
+  <script src="quizLogic.js" defer></script>
 </head>
-<body>
-    <header>
-        LOGO
-        <nav>
-            <a href="./home.html">HOME</a> <br>
-            <a href="https://www.sfu.ca">PRODUCTS</a> <br>
-            <a href="">ABOUT</a>
-        </nav>
-    </header>
-    <main id="mainpart">
-        <h1>HEADER TEXT</h1>
-        <section class="sec1">
-            text for section 1
-        </section>
-        <section class="sec2">
-            text for section 2 <br>
-            more tect for section 2 <br>
-            more text
-        </section>
-        <form action="/submit">
-            <fieldset>
-                <legend>INFO</legend>
-                USERNAME: <input name="uname" type="text">
-                <input type="submit" value="SEND">
-            </fieldset>
-        </form>
-        <table>
-            <tr><th>Name</th><th>Age</th><th>Password</th></tr>
-            <tr><td>Bobby</td><td>42</td><td>P@ssWorD</td></tr>
-            <tr><td>Sarah</td><td>33</td><td>12345</td></tr>
-            <tr><td>Steve</td><td>44</td><td>Steve!!</td></tr>
-        </table>
-    </main>
-    <footer>
-        Copyright Bobby Chan 2023
-    </footer>
+<body> 
+  <center>
+  <h1> Interactive Quiz </h1>  
+  <form>
+    <div id = "question1">
+      <h2> What year was SFU Founded?</h2>
+      <input type ="radio" name = "question1" value = "1807" checked = "checked">
+      <label for="option1">1807</label><br>
+      <input type ="radio" name = "question1" value = "Correct">
+      <label for="option2">1808</label><br>
+      <input type ="radio" name = "question1" value = "1809">
+      <label for="option3">1809</label><br>
+      <input type ="radio" name = "question1" value = "1810">
+      <label for="option4">1810</label><br><br>
+      <button type="button" onclick = "toquestion2()">Next</button><br>
+    </div>
+    <div id = "question2">
+      <h2> Where is the SFU Vancouver Campus?</h2>
+      <input type ="radio" name = "question2" value = "Correct" checked = "checked">
+      <label for="option1">West Hastings</label><br>
+      <input type ="radio" name = "question2" value = "East Hastings">
+      <label for="option2">East Hastings</label><br>
+      <input type ="radio" name = "question2" value = "Burrard Street">
+      <label for="option3">Burrard Street</label><br>
+      <input type ="radio" name = "question2" value = "University Drive">
+      <label for="option4">University Drive</label><br><br>
+      <button type="button" onclick = "toquestion1()">Previous</button><br><br>
+      <button type="button" onclick = "toquestion3()">Next</button><br>
+    </div>
+    <div id = "question3">
+      <h2> Who designed the SFU Surrey Campus?</h2>
+      <input type ="radio" name = "question3" value = "William R. Rhone and Randle Iredale" checked = "checked">
+      <label for="option1">William R. Rhone and Randle Iredale</label><br>
+      <input type ="radio" name = "question3" value = "Morris J. Wosk">
+      <label for="option2">Morris J. Wosk</label><br>
+      <input type ="radio" name = "question3" value = "Arthur Erickson and Geoffrey Massey">
+      <label for="option3">Arthur Erickson and Geoffrey Massey</label><br>
+      <input type ="radio" name = "question3" value = "Correct">
+      <label for="option4">Bing Thom</label><br><br>
+      <button type="button" onclick = "toquestion2()">Previous</button><br><br>
+      <button type="button" onclick = "toquestion4()">Next</button><br>
+    </div>
+    <div id = "question4">
+      <h2> What is the Burneby Library called?</h2>
+      <input type ="radio" name = "question4" value = "Bailey Library" checked = "checked">
+      <label for="option1">Bailey Library</label><br>
+      <input type ="radio" name = "question4" value = "Correct">
+      <label for="option2">WAC Bennet Library</label><br>
+      <input type ="radio" name = "question4" value = "We do not have a library">
+      <label for="option3">We do not have a library</label><br>
+      <input type ="radio" name = "question4" value = "SFU Library">
+      <label for="option4">SFU Library</label><br><br>
+      <button type="button" onclick = "toquestion3()">Previous</button><br><br>
+      <button type="button" onclick = "tosubmit()">Submit</button><br>
+    </div>
+  </form> 
+  <div id = "outcome"> 
+    <p> 1. The correct answer is 1808. </p>
+    <p> 2. The correct answer is West Hastings. </p>
+    <p> 3. The correct answer is Bing Thom. </p>
+    <p> 4. The correct answer is WAC Bennet Library.</p>
+    <p id = "score"> final score: </p> 
+  </div>
+  </center>
 </body>
 </html>
